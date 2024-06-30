@@ -1,6 +1,7 @@
 package Tests;
 
 import HelperMethods.ElementMethods;
+import Pages.HomePage;
 import SharedData.SharedData;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,8 +19,11 @@ public class PracticeFormTest extends SharedData {
     @Test
     public void metodaTest() {
 
-        ElementMethods elementMethods = new ElementMethods(getWebDriver());
-        elementMethods.scrollElementByPixel(0,450);
+//        ElementMethods elementMethods = new ElementMethods(getWebDriver());
+//        elementMethods.scrollElementByPixel(0,450);
+
+        HomePage homePage =new HomePage(getWebDriver());
+        homePage.navigateToFormsPage();
 
 //        //deschidem un browser de Chrome
 //        webDriver = new ChromeDriver();
@@ -34,9 +38,9 @@ public class PracticeFormTest extends SharedData {
 //        WebElement consentField= webDriver.findElement(By.className("fc-button-label"));
 ////        consentField.click();
 
-        WebElement formsField= getWebDriver().findElement(By.xpath("//h5[text()='Forms']"));
-//        formsField.click();
-        elementMethods.clickElement(formsField);
+//        WebElement formsField= getWebDriver().findElement(By.xpath("//h5[text()='Forms']"));
+////        formsField.click();
+//        elementMethods.clickElement(formsField);
 
         elementMethods.scrollElementByPixel(0,450);
 //        js.executeScript("window.scrollBy(0,450)", "");

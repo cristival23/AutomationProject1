@@ -1,12 +1,10 @@
 package Pages;
 
-import HelperMethods.ElementMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class AlertWindowsFramePage extends BasePages {
+public class AlertWindowsFramePage extends BasePage {
     //    private ElementMethods elementMethods;
 //    private WebDriver webDriver;
 //    public AlertWindowsFramePage (WebDriver webDriver) {
@@ -14,18 +12,24 @@ public class AlertWindowsFramePage extends BasePages {
 //        elementMethods = new ElementMethods(webDriver);
 //        PageFactory.initElements(webDriver, this);
 //    }
+
+    @FindBy(xpath = "//span[text()='Alerts']")
+    private WebElement windowField;
+
+    @FindBy(xpath = "//span[text()='Frames']")
+    private WebElement framesField;
+
     public AlertWindowsFramePage(WebDriver webDriver) {
         super(webDriver);
     }
 
-    @FindBy(xpath = "//span[text()='Alerts']")
-    public WebElement framesField;
-
-
     public void navigateToAlertPage() {
-        elementMethods.scrollElementByPixel(0, 450);
-        elementMethods.clickElement(framesField);
+//        elementMethods.scrollElementByPixel(0, 450);
+        elementMethods.clickElement(windowField);
 
+    }
+    public void navigateToFramePage(){
+        elementMethods.clickElement(framesField);
     }
 
 }
